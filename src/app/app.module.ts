@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NovaTranferenciaComponent } from './nova-tranferencia/nova-tranferencia.component';
 import { FormsModule } from '@angular/forms';
 import { ExtratoComponent } from './extrato/extrato.component';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, DatePipe } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderPipe} from './pipes/order.pipe';
@@ -34,7 +34,7 @@ registerLocaleData(localePt, 'pt');
   declarations: [AppComponent, NovaTranferenciaComponent, ExtratoComponent, OrderPipe, LoginComponent, DetailsComponent, DataPipe,],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,TooltipModule.forRoot(),AlertModule,AccordionModule,ModalModule.forRoot(),
     ButtonsModule,SharedModule ],
-  providers: [AlertConfig,BsModalService,ModalService,LoginService,LoginGuard,
+  providers: [AlertConfig,BsModalService,ModalService,LoginService,LoginGuard,DatePipe,
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
   ],

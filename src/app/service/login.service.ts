@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../module/usuario';
+import { ModalService } from './modal.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,7 @@ export class LoginService {
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private modalService: ModalService) {}
 
   fazerLogin(usuario: Usuario) {
     if (usuario.nome === 'clebson' && usuario.senha === '123456') {
@@ -21,7 +21,7 @@ export class LoginService {
     } else {
       this.usuarioAutenticado = false;
       this.mostrarMenuEmitter.emit(false);
-      alert('login invalido');
+      this.modalService.openModal('Login inválido! Verifique Usuário e senha!', false, 'xl');
     }
   }
 

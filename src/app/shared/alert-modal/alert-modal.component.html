@@ -5,10 +5,10 @@
         <h5 class="modal-title">{{title}}</h5>
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" (click)="onClose()"></button>
       </div>
-      <div class="modal-body bg-success-subtle">
+      <div class="modal-body bg-danger">
         <p>{{msg}}</p>
       </div>
-      <div class="modal-footer bg-light">
+      <div *ngIf="showFooter" class="modal-footer bg-light">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">{{cancelTxt}}</button>
         <button type="button" class="btn btn-primary" (click)="onConfirm()">{{okTxt}}</button>
       </div>

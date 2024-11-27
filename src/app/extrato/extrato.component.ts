@@ -5,6 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertModalService } from '../shared/alert-modal.service';
 import { ModalService } from '../service/modal.service';
 import { EMPTY, switchMap, take } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-extrato',
@@ -25,6 +26,8 @@ export class ExtratoComponent {
     private alertService: AlertModalService,
 
     private modalService: ModalService,
+
+    private datePipe: DatePipe
 
   ) {
     this.getTransferencia();
@@ -63,9 +66,10 @@ export class ExtratoComponent {
   onDelete(transferencia: Transferencia) {
     this.transferenciaSelecionada = transferencia;
     //this.deleteModalRef = this.bsmodalService.show(this.deleteModal, {class: 'modal-sm'})
+    const formattedDate = this.datePipe.transform(transferencia.data, 'dd/MM/yyyy');
     const result$ = this.alertService.showConfirm(
       'Confirmação',
-      'Deseja exluir?',
+      `Deseja excluir a transferência com data ${formattedDate} e valor R$ ${transferencia.valor}?`,
       'sim',
       'Cancelar'
     );

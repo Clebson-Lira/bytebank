@@ -3,21 +3,13 @@
     <div class="modal-content">
       <div class="modal-header bg-dark">
         <h4 class="modal-title" id="modalTitle">Detalhes da Transferência</h4>
-        <button
-          type="button"
-          class="btn-close bg-danger"
-          data-bs-dismiss="modal"
-          aria-label="Fechar"
-          (click)="closeModal()"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" (click)="closeModal()"></button>
       </div>
-      <div class="modal-body bg-success-subtle">
-        <div class="spacer">ID: {{ transferencia?.id }}</div>
-        <div class="spacer">Valor: {{ transferencia?.valor | currency }}</div>
-        <div class="spacer">Data: {{ transferencia?.data | date : "dd/MM/yyyy HH:mm:ss" }}</div>
-        <div class="spacer">Destino: {{ transferencia?.destino }}</div>
+      <div class="spacer p-2 bg-success-subtle">
+        ID: {{ transferencia?.id }} - 
+        Valor: {{ transferencia?.valor | currency }} - 
+        Data: {{ transferencia?.data | date : "dd/MM/yyyy HH:mm:ss" }} - 
+        Destino: {{ transferencia?.destino }}
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-danger" (click)="closeModal()">

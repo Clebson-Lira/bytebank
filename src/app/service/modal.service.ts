@@ -24,12 +24,13 @@ export class ModalService {
 
     modalRef.content.transferencia = transferencia;
   }
-  openModal(remov) {
-    const modalRef = this.bsmodalService.show(AlertModalComponent);
-
-    modalRef.content.message = remov;
+  openModal(remov, showFooter = true, size: 'sm' | 'lg' | 'xl' = 'lg') {
+    const initialState = {
+      title: 'Erro de Login!',
+      msg: remov,
+      showFooter: showFooter
+    };
+    const modalRef: BsModalRef = this.bsmodalService.show(AlertModalComponent, { initialState, class: `modal-${size}` });
+    modalRef.content.msg = remov;
   }
-
-
-
 }
