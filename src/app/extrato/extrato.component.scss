@@ -1,0 +1,73 @@
+
+
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  width: 100%;
+
+}
+
+.table {
+  text-align: center;
+  margin: 0 auto;
+
+  color: white;
+
+
+
+  &__cabecalho {
+    color: var(--primary);
+    cursor: pointer;
+    background-color: black;
+
+
+    &__conteudo {
+      padding: 10px;
+      border-bottom: 2px solid green;
+    }
+  }
+
+  &__linha {
+    margin-bottom: 10px;
+    border-radius: 4px;
+
+
+    &:last-child {
+      .table__conteudo {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__conteudo {
+    padding: 10px;
+    border-bottom: 1px solid var(--primary);
+  }
+}
+
+
+.up{
+  transform: rotate(90deg);
+  transition: ease 0.2s;
+}
+.down{
+  transition: ease 0.2s;
+}
+.btn{
+  color: white;
+}
+.btn-info:hover{
+  background-color: white;
+  color: rgb(35, 171, 224);
+}
+.btn-danger:hover{
+  background-color: white;
+  color: rgb(240, 101, 101);
+}
+
+span{
+  border-radius: 5px;
+}
+
+

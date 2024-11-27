@@ -1,0 +1,10 @@
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 1rem);
+}
+
+.modal-xl {
+  max-width: 80%;
+}
