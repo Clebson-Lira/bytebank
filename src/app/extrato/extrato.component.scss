@@ -1,4 +1,10 @@
-
+.table-scroll-container {
+  max-height: 500px; /* Defina a altura máxima para o scroll vertical */
+  overflow-y: auto; /* Ativa o scroll vertical */
+  overflow-x: auto; /* Ativa o scroll horizontal */
+  border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a tabela */
+  position: relative; /* Adiciona posição relativa para o container */
+}
 
 .titulo {
   text-align: center;
@@ -20,6 +26,9 @@
     color: var(--primary);
     cursor: pointer;
     background-color: black;
+    position: sticky; /* Torna o cabeçalho fixo */
+    top: 0; /* Fixa o cabeçalho no topo */
+    z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo */
 
 
     &__conteudo {

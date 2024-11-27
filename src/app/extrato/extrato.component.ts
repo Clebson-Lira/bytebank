@@ -32,7 +32,6 @@ export class ExtratoComponent {
 
   ngOnInit() {
     this.service.todas().subscribe((transferencias: Transferencia[]) => {
-      console.table(transferencias);
       this.transferencias = transferencias;
     });
   }
