@@ -66,13 +66,22 @@
 .btn{
   color: white;
 }
+.btn1 {
+  @extend .btn;
+  background: rgb(81, 162, 238);
+}
+
+.btn2 {
+  @extend .btn;
+  background: rgb(233, 127, 127);
+}
 .btn-info:hover{
   background-color: white;
-  color: rgb(35, 171, 224);
+  color: rgb(119, 207, 241);
 }
 .btn-danger:hover{
   background-color: white;
-  color: rgb(240, 101, 101);
+  color: rgb(233, 127, 127);
 }
 
 span{
