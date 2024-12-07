@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { registerLocaleData, DatePipe } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { OrderPipe} from './pipes/order.pipe';
 import { LoginComponent } from './login/login.component';
 import { DetailsComponent } from './details/details.component';
@@ -30,14 +30,9 @@ import { LoginGuard } from './guards/login.guard';
 
 registerLocaleData(localePt, 'pt');
 
-@NgModule({
-  declarations: [AppComponent, NovaTranferenciaComponent, ExtratoComponent, OrderPipe, LoginComponent, DetailsComponent, DataPipe,],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,TooltipModule.forRoot(),AlertModule,AccordionModule,ModalModule.forRoot(),
-    ButtonsModule,SharedModule ],
-  providers: [AlertConfig,BsModalService,ModalService,LoginService,LoginGuard,DatePipe,
-    { provide: LOCALE_ID, useValue: 'pt' },
-    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent, NovaTranferenciaComponent, ExtratoComponent, OrderPipe, LoginComponent, DetailsComponent, DataPipe,],
+    bootstrap: [AppComponent], imports: [BrowserModule, AppRoutingModule, FormsModule, TooltipModule.forRoot(), AlertModule, AccordionModule, ModalModule.forRoot(),
+        ButtonsModule, SharedModule], providers: [AlertConfig, BsModalService, ModalService, LoginService, LoginGuard, DatePipe,
+        { provide: LOCALE_ID, useValue: 'pt' },
+        { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }, provideHttpClient(withInterceptorsFromDi()),] })
 export class AppModule {}
