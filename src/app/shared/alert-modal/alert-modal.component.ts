@@ -3,9 +3,10 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-alert-modal',
-  templateUrl: './alert-modal.component.html',
-  styleUrls: ['./alert-modal.component.scss']
+    selector: 'app-alert-modal',
+    templateUrl: './alert-modal.component.html',
+    styleUrls: ['./alert-modal.component.scss'],
+    standalone: false
 })
 export class AlertModalComponent  implements OnInit{
   @Input() title: string;

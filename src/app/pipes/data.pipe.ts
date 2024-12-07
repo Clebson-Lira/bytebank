@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Transferencia } from '../module/transferencia';
 
 @Pipe({
-  name: 'data'
+    name: 'data',
+    standalone: false
 })
 export class DataPipe implements PipeTransform {
 

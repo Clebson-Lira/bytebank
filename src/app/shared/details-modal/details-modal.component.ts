@@ -6,9 +6,10 @@ import { TransferenciaService } from 'src/app/service/transferencia.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-details-modal',
-  templateUrl: './details-modal.component.html',
-  styleUrls: ['./details-modal.component.scss'],
+    selector: 'app-details-modal',
+    templateUrl: './details-modal.component.html',
+    styleUrls: ['./details-modal.component.scss'],
+    standalone: false
 })
 export class DetailsModalComponent implements OnInit {
   @Output()

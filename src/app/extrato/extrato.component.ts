@@ -8,9 +8,10 @@ import { EMPTY, switchMap, take } from 'rxjs';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-extrato',
-  templateUrl: './extrato.component.html',
-  styleUrls: ['./extrato.component.scss'],
+    selector: 'app-extrato',
+    templateUrl: './extrato.component.html',
+    styleUrls: ['./extrato.component.scss'],
+    standalone: false
 })
 export class ExtratoComponent {
   transferencias: Transferencia[] = [];

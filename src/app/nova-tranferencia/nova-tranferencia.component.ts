@@ -5,9 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-nova-tranferencia',
-  templateUrl: './nova-tranferencia.component.html',
-  styleUrls: ['./nova-tranferencia.component.scss']
+    selector: 'app-nova-tranferencia',
+    templateUrl: './nova-tranferencia.component.html',
+    styleUrls: ['./nova-tranferencia.component.scss'],
+    standalone: false
 })
 export class NovaTranferenciaComponent {
 

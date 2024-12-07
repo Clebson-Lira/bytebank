@@ -3,9 +3,10 @@ import { Usuario } from '../module/usuario';
 import { LoginService } from '../service/login.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
 })
 export class LoginComponent implements OnInit {
   usuario: Usuario = new Usuario();
