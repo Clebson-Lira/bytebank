@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bytebank:build:production"
+              "buildTarget": "bytebank:build:production"
             },
             "development": {
-              "browserTarget": "bytebank:build:development"
+              "buildTarget": "bytebank:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bytebank:build"
+            "buildTarget": "bytebank:build"
           }
         },
         "test": {
