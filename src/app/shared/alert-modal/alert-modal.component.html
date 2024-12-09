@@ -1,17 +1,17 @@
-<div class="modal d-flex justify-content-center align-items-center">
-  <div class="modal-dialog modal-lg"> <!-- Use modal-lg para um modal grande ou modal-sm para um modal pequeno -->
-    <div class="modal-content">
-      <div class="modal-header bg-dark-subtle">
+<section class="modal d-flex justify-content-center align-items-center">
+  <article class="modal-dialog modal-lg"> <!-- Use modal-lg para um modal grande ou modal-sm para um modal pequeno -->
+    <section class="modal-content">
+      <header class="modal-header bg-dark-subtle">
         <h5 class="modal-title">{{title}}</h5>
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" (click)="onClose()"></button>
-      </div>
-      <div class="modal-body bg-danger-subtle">
+      </header>
+      <main class="modal-body bg-danger-subtle">
         <p>{{msg}}</p>
-      </div>
-      <div *ngIf="showFooter" class="modal-footer bg-light">
+      </main>
+      <footer *ngIf="showFooter" class="modal-footer bg-light">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">{{cancelTxt}}</button>
         <button type="button" class="btn btn-primary" (click)="onConfirm()">{{okTxt}}</button>
-      </div>
-    </div>
-  </div>
-</div>
+      </footer>
+    </section>
+  </article>
+</section>

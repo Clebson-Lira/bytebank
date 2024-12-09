@@ -1,21 +1,27 @@
-<div class="modal d-flex justify-content-center align-items-center" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark-subtle">
+<section class="modal d-flex justify-content-center align-items-center" tabindex="-1" role="dialog">
+  <article class="modal-dialog modal-lg" role="document">
+    <section class="modal-content">
+      <header class="modal-header bg-dark-subtle">
         <h4 class="modal-title" id="modalTitle">Detalhes da Transferência</h4>
-        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" (click)="closeModal()"></button>
-      </div>
-      <div class="spacer p-2 bg-success-subtle">
-        ID: {{ transferencia?.id }} - 
-        Valor: {{ transferencia?.valor | currency : 'BRL' : 'symbol' : '1.2-2' }} - 
-        Data: {{ transferencia?.data | date : "dd/MM/yyyy HH:mm:ss" }} - 
-        Destino: {{ transferencia?.destino }}
-      </div>
-      <div class="modal-footer bg-light">
+        <!-- <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" (click)="closeModal()"></button> -->
+      </header>
+      <section class="m-1 spacer p-2 bg-success-subtle">
+        <div>ID: {{ transferencia?.id }}</div>
+      </section>
+      <section class="m-1 spacer p-2 bg-success-subtle">
+        <div>Data: {{ transferencia?.data | date : "dd/MM/yyyy HH:mm:ss" }}</div>
+      </section>
+      <section class="m-1 spacer p-2 bg-success-subtle">
+        <div>Valor: {{ transferencia?.valor | currency : 'BRL' : 'symbol' : '1.2-2' }}</div>
+      </section>
+      <section class="m-1 spacer p-2 bg-success-subtle">
+        <div>Destino: {{ transferencia?.destino }}</div>
+      </section>
+      <footer class="modal-footer bg-light">
         <button type="button" class="btn btn-danger" (click)="closeModal()">
           Fechar
         </button>
-      </div>
-    </div>
-  </div>
-</div>
+      </footer>
+    </section>
+  </article>
+</section>

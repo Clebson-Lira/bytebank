@@ -1,9 +1,9 @@
 .table-scroll-container {
-  max-height: 500px; /* Defina a altura máxima para o scroll vertical */
-  overflow-y: auto; /* Ativa o scroll vertical */
-  overflow-x: auto; /* Ativa o scroll horizontal */
-  border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a tabela */
-  position: relative; /* Adiciona posição relativa para o container */
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  position: relative;
 }
 
 .titulo {
@@ -11,25 +11,20 @@
   font-size: 24px;
   margin-bottom: 16px;
   width: 100%;
-
 }
 
 .table {
   text-align: center;
   margin: 0 auto;
-
   color: white;
-
-
 
   &__cabecalho {
     color: var(--primary);
     cursor: pointer;
     background-color: black;
-    position: sticky; /* Torna o cabeçalho fixo */
-    top: 0; /* Fixa o cabeçalho no topo */
-    z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo */
-
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     &__conteudo {
       padding: 10px;
@@ -40,7 +35,6 @@
   &__linha {
     margin-bottom: 10px;
     border-radius: 4px;
-
 
     &:last-child {
       .table__conteudo {
@@ -55,36 +49,40 @@
   }
 }
 
-
-.up{
+.up {
   transform: rotate(90deg);
   transition: ease 0.2s;
 }
-.down{
+
+.down {
   transition: ease 0.2s;
 }
-.btn{
+
+.btn {
   color: white;
 }
+
 .btn1 {
   @extend .btn;
-  background: rgb(81, 162, 238);
+  background: rgb(60, 157, 248);
 }
 
 .btn2 {
   @extend .btn;
   background: rgb(233, 127, 127);
 }
-.btn-info:hover{
+
+.btn-info:hover {
   background-color: white;
   color: rgb(119, 207, 241);
 }
-.btn-danger:hover{
+
+.btn-danger:hover {
   background-color: white;
   color: rgb(233, 127, 127);
 }
 
-span{
+span {
   border-radius: 5px;
 }
 
