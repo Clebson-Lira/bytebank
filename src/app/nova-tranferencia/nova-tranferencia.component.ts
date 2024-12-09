@@ -2,13 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { TransferenciaService } from '../service/transferencia.service';
 import { Transferencia } from '../module/transferencia';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-nova-tranferencia',
     templateUrl: './nova-tranferencia.component.html',
     styleUrls: ['./nova-tranferencia.component.scss'],
-    standalone: false
+    imports: [FormsModule]
 })
 export class NovaTranferenciaComponent {
 
@@ -22,13 +22,11 @@ export class NovaTranferenciaComponent {
   }
 
   transferir(){
-    console.log('tranferir')
     const valorEmitir: Transferencia = {
       valor: this.valor, destino: this.destino,
       id: this.id,
     };
     this.service.adicionar(valorEmitir).subscribe(resultado => {
-      console.log(resultado);
       this.router.navigateByUrl('extrato');
     })
 

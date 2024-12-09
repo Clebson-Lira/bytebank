@@ -3,7 +3,7 @@ import { Transferencia } from '../module/transferencia';
 
 @Pipe({
     name: 'data',
-    standalone: false
+    standalone: true // Adicionado standalone
 })
 export class DataPipe implements PipeTransform {
 

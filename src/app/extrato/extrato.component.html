@@ -20,14 +20,14 @@
           class="table__linha"
           *ngFor="
             let transferencia of transferencias
-              | sort : 'valor' : isAsc : key
-              | data : 'data' : isAsc2 : kyj
+              | order : key : isAsc
+              | data : kyj : isAsc2
           "
         >
           <td class="table__conteudo">
-            {{ transferencia.data | date : "short" }}
+            {{ transferencia.data | date : "dd/MM/yyyy" }}
           </td>
-          <td class="table__conteudo">{{ transferencia.valor | currency }}</td>
+          <td class="table__conteudo">{{ transferencia.valor | currency : 'BRL' : 'symbol' : '1.2-2' }}</td>
           <td class="table__conteudo">{{ transferencia.destino }}</td>
           <td class="table__conteudo">
             <button

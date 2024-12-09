@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
+import { CommonModule } from '@angular/common'; // Adicionado CommonModule
 
 @Component({
     selector: 'app-alert-modal',
     templateUrl: './alert-modal.component.html',
     styleUrls: ['./alert-modal.component.scss'],
-    standalone: false
+    imports: [CommonModule] // Adicionado CommonModule
 })
 export class AlertModalComponent  implements OnInit{
   @Input() title: string;
@@ -23,12 +24,9 @@ export class AlertModalComponent  implements OnInit{
     this.confirmResult = new Subject();
   }
 
-
-
   onConfirm(){
     this.confirmAndClose(true);
   }
-
 
   onClose(){
    this.confirmAndClose(false);
@@ -38,7 +36,4 @@ export class AlertModalComponent  implements OnInit{
     this.confirmResult.next(value);
     this.bsModalRef.hide();
   }
-
-
-
 }

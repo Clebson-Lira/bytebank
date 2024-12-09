@@ -3,8 +3,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Transferencia } from '../module/transferencia';
 
 @Pipe({
-    name: 'sort',
-    standalone: false
+  name: 'order',
+  standalone: true // Adicionado standalone
 })
 export class OrderPipe implements PipeTransform {
 

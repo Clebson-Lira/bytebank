@@ -7,7 +7,7 @@
       </div>
       <div class="spacer p-2 bg-success-subtle">
         ID: {{ transferencia?.id }} - 
-        Valor: {{ transferencia?.valor | currency }} - 
+        Valor: {{ transferencia?.valor | currency : 'BRL' : 'symbol' : '1.2-2' }} - 
         Data: {{ transferencia?.data | date : "dd/MM/yyyy HH:mm:ss" }} - 
         Destino: {{ transferencia?.destino }}
       </div>

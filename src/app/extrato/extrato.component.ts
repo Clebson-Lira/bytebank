@@ -1,17 +1,24 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, LOCALE_ID, ViewChild } from '@angular/core';
 import { TransferenciaService } from '../service/transferencia.service';
 import { Transferencia } from '../module/transferencia';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertModalService } from '../shared/alert-modal.service';
 import { ModalService } from '../service/modal.service';
 import { EMPTY, switchMap, take } from 'rxjs';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CommonModule, registerLocaleData } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { DataPipe } from '../pipes/data.pipe';
+import { OrderPipe } from '../pipes/order.pipe';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt');
 
 @Component({
     selector: 'app-extrato',
     templateUrl: './extrato.component.html',
     styleUrls: ['./extrato.component.scss'],
-    standalone: false
+    imports: [FormsModule, CommonModule, DataPipe, OrderPipe],
+    providers: [DatePipe, { provide: LOCALE_ID, useValue: 'pt' }]
 })
 export class ExtratoComponent {
   transferencias: Transferencia[] = [];
